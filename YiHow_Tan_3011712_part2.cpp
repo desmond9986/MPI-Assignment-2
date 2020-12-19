@@ -99,6 +99,9 @@ int main(int argc, char** argv) {
 	// only print the total primes count in rank 0
 	if (world_rank == 0)
 		std::cout << "Total amount of primes have encountered in all ranks is " << total_count << std::endl;
+	
+	delete total_array;
+	delete partition;
 	// before we can end our application we need to finalise everything so MPI can shut
 	// down properly
 	MPI_Finalize();
